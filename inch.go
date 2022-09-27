@@ -698,7 +698,8 @@ var defaultSetupFn = func(s *Simulator) error {
 		s.ReportTags["version"] = version
 	}
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/query", s.Host), strings.NewReader("q=CREATE+DATABASE+"+s.Database+"+WITH+DURATION+"+s.ShardDuration))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/write", s.Host), strings.NewReader("ma,ta=a1,tb=b1 fa=1,fb=1"))
+	//req, err := http.NewRequest("POST", fmt.Sprintf("%s/query", s.Host), strings.NewReader("q=CREATE+DATABASE+"+s.Database+"+WITH+DURATION+"+s.ShardDuration))
 	if err != nil {
 		return err
 	}
