@@ -779,7 +779,7 @@ func (s *Simulator) sendBatch(buf []byte) error {
 	}
 
 	// Return body as error if unsuccessful.
-	if code != 204 {
+	if code != 200 {
 		s.mu.Lock()
 		s.currentErrors++
 		s.totalErrors++
